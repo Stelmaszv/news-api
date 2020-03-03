@@ -11,12 +11,16 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class NewsServieService {
-  news_Url:string = 'http://127.0.0.1:8000/api/news/get';
+  news_Url:string = 'http://127.0.0.1:8000/api/news/getAll';
+  news_item:string= 'http://127.0.0.1:8000/api/news/get'
   constructor(private http:HttpClient) { }
   get_news(category:Array<any>) {
-    return this.http.get<News[]>(this.url(category.search));
+    return this.http.get<News[]>(this.url(this.news_Url,category.search));
   }
-  url(category:string){
-    return this.news_Url+'/'+category+'/'
+  url(url,category:string){
+    return url+'/'+category+'/'
+  }
+  get(id:int){
+    return this.http.get<News[]>(this.url(this.news_item,id));
   }
 }

@@ -1,4 +1,4 @@
 <h2>{{category.title}}</h2>
 <div *ngFor="let item of newsLoop;">
-    {{item.title}}
+    <a routerLink="/main/{{item.id}}" routerLinkActive="active"> {{item.title}}</a>
 </div>
