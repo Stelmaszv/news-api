@@ -8,7 +8,7 @@ import { AppRoutingModule,AppRouting } from './/app-routing.module';
   declarations: [
     AppComponent,
     SectionComponent,
-    AppRouting
+    AppRouting,
   ],
   imports: [
     BrowserModule,

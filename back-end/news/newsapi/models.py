@@ -7,5 +7,6 @@ class news(models.Model):
     title = models.CharField(max_length=150)
     type = models.ForeignKey(type, on_delete=models.SET_NULL, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
+    views = models.BigIntegerField(null=True, blank=False)
     def __str__(self):
-        return self.title;
+        return str(self.id)+' - '+self.title+' - '+str(self.type)+' - '+str(self.views)

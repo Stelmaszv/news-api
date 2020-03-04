@@ -14,7 +14,7 @@ export class SectionComponent implements OnInit {
     this.get_Data();
   }
   get_Data(){
-    this.NewsServieService.get_news(this.category).subscribe(todos => {
+    this.NewsServieService.get_news(this.category.search).subscribe(todos => {
       this.newsLoop = todos
     });
   }
