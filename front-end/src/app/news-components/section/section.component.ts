@@ -1,13 +1,12 @@
 import { Component, OnInit,Input  } from '@angular/core';
 import { NewsServieService } from '../../services/news-servie.service';
-import { News } from '../../models/news'
 @Component({
   selector: 'app-section',
   templateUrl: './section.component.html',
   styleUrls: ['./section.component.css']
 })
 export class SectionComponent implements OnInit {
-  @Input() category:Array<any>;
+  @Input() category;
   newsLoop
   constructor(private NewsServieService:NewsServieService) {  }
   ngOnInit(){

@@ -15,16 +15,16 @@ export class NewsServieService {
   news_item:string= 'http://127.0.0.1:8000/api/news/get'
   news_all_in_category:string='http://127.0.0.1:8000/api/news/getAll'
   constructor(private http:HttpClient) { }
-  get_all_news_in_category(category) {
+  get_all_news_in_category(category):Observable<News[]> {
     return this.http.get<News[]>(this.url(this.news_all_in_category,category));
   }
-  get_news(category,) {
+  get_news(category):Observable<News[]> {
     return this.http.get<News[]>(this.url(this.news_Url,category));
   }
   url(url,category:string){
     return url+'/'+category+'/'
   }
-  get(id:int){
+  get(id){
     return this.http.get<News[]>(this.url(this.news_item,id));
   }
 }

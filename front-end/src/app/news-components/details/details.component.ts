@@ -8,7 +8,7 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  Detail
+  Detail;
   constructor(private route: ActivatedRoute,private NewsServieService:NewsServieService) { }
 
   ngOnInit() {
@@ -17,7 +17,6 @@ export class DetailsComponent implements OnInit {
   get_Data(id){
     this.NewsServieService.get(id).subscribe(todos => {
       this.Detail = todos[0];
-      console.log(this.Detail)
     });
   }
 }

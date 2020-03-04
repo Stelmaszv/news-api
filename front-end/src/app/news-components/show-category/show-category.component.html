@@ -1,4 +1,4 @@
-<h2>All news in Category <b>{{search}} <a href='main'>hame</a></b></h2> 
+<h2>All news in Category <b>{{search}} <a routerLink='/main'>hame</a></b></h2> 
 <div *ngFor="let item of newsLoop;">
     <a routerLink="/main/{{item.id}}" routerLinkActive="active"> {{item.title}}</a>
 </div>

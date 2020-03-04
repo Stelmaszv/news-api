@@ -8,8 +8,8 @@ import { NewsServieService } from '../../services/news-servie.service';
   styleUrls: ['./show-category.component.css']
 })
 export class ShowCategoryComponent implements OnInit {
-  search
-  newsLoop
+  search : string;
+  newsLoop :Array<any>;
   constructor(private route: ActivatedRoute,private NewsServieService:NewsServieService) { }
 
   ngOnInit() {

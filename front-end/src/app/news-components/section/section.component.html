@@ -2,4 +2,4 @@
 <div *ngFor="let item of newsLoop;">
     <a routerLink="/main/{{item.id}}" routerLinkActive="active"> {{item.title}}</a>
 </div>
-<a href='showAll/{{category.search}}'>show all</a>
+<a routerLink="/showAll/{{category.search}}">show all</a>
