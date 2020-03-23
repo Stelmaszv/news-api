@@ -1,0 +1,12 @@
+<app-header></app-header>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <label>
+      login
+      <input type="test" formControlName="username">
+  </label>
+  <label>
+      password
+      <input type="password" formControlName="password">
+  </label>
+  <input type='submit'>
+</form>

@@ -1,0 +1,15 @@
+<app-header></app-header>
+<form [formGroup]="AddNews" (ngSubmit)="onSubmit()">
+  <label>
+      Subject<br>
+      <input type="test" formControlName="subject">
+  </label>
+  <br>
+  <label>
+      Discription<br>
+      <textarea formControlName="discription">
+      </textarea>
+  </label>
+  <br>
+  <input type='submit'>
+</form>

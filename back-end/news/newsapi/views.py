@@ -3,6 +3,7 @@ from .serializer import NewsSerializer
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import  APIView
+from rest_framework.permissions import IsAuthenticated
 class prototype_api(APIView):
     def get(self,request, *args, **kwargs):
         argument = self.kwargs.get(self.get_atrybut)
@@ -25,3 +26,16 @@ class get_all_in_category(prototype_api):
 class get_news(prototype_api):
     get_atrybut="id"
     get_one=True
+class ifAuth(APIView):
+    permission_classes = [IsAuthenticated]
+    def post(self, request):
+        content = {'message': 'Hello, World!'}
+        return Response(content)
+class addNews(APIView):
+    def post(self,request):
+        print(request.POST)
+        new=news()
+        serializer = NewsSerializer(new, many=True)
+        print(serializer)
+        content = request.POST
+        return Response(content)

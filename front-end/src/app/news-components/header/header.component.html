@@ -1,0 +1,15 @@
+<div *ngIf="auth">
+  <nav>
+    <a routerLink='/addnews'>
+      add news
+    </a>
+  </nav>
+</div>
+<div *ngIf="!auth">
+  <nav>
+    <a routerLink='/login'>
+      zaloguj
+    </a>
+  </nav>
+</div>
+
